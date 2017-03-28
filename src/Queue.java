@@ -12,32 +12,38 @@ public class Queue {
 			size++;
 		}
 		else{
-			Link newLink = new Link(color, tail);
+			if(head.next == null){
+			Link newLink = new Link(color, null);
 			tail = newLink;
+			head.next = tail;
 			size++;
+			}
+			else{
+				Link temp = head;
+				while(temp.next != null){
+					temp = temp.next;
+				}
+				Link newLink = new Link(color, null);
+				tail = newLink;
+				temp.next = tail;
+				size++;
+			}
 		}
 	}
 	public void dequeue(){
-		Link temp = tail;
-		int i = 0;
-		while(i == 0){
-			if(temp.next == head){
-				temp.next = null;
-				i++;
-			}
-			else{
-				temp = temp.next;
-			}
-			
+		if(head == null){
+			System.out.println("Empty List");
 		}
-		head = temp;
-		size--;
+		else{
+			Link temp = head;
+			head = temp.next;
+	}
 	}
 	public Link peek(){
 		return head;
 	}
 	public void printList(){
-		Link temp = tail;
+		Link temp = head;
 		while(temp != null){
 			System.out.println(temp.color);
 			temp = temp.next;
