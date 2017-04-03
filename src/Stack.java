@@ -8,17 +8,21 @@ public class Stack {
 			Link newLink = new Link(color, null);
 			head = newLink;
 			size++;
+			System.out.println("push("+color+")");
 		}
 		else{
 			Link newLink = new Link(color, head);
 			head = newLink;
 			size++;
+			System.out.println("push("+color+")");
 		}
 		
 	}
 	public void pop(){
 		Link temp = head;
+		System.out.println("Removing: " + temp.color);
 		head = temp.next;
+		
 	}
 	public Link peek(){
 		return head;

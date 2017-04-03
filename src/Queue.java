@@ -10,6 +10,7 @@ public class Queue {
 			head = newLink;	
 			tail = newLink;
 			size++;
+			System.out.println("enqueue("+color+")");
 		}
 		else{
 			if(head.next == null){
@@ -17,6 +18,7 @@ public class Queue {
 			tail = newLink;
 			head.next = tail;
 			size++;
+			System.out.println("enqueue("+color+")");
 			}
 			else{
 				Link temp = head;
@@ -27,6 +29,7 @@ public class Queue {
 				tail = newLink;
 				temp.next = tail;
 				size++;
+				System.out.println("enqueue("+color+")");
 			}
 		}
 	}
@@ -36,6 +39,7 @@ public class Queue {
 		}
 		else{
 			Link temp = head;
+			System.out.println("dequeue("+temp.color+")");
 			head = temp.next;
 	}
 	}

@@ -10,10 +10,11 @@ public class TestSnQ {
 		s.push("Orange");
 		s.push("Purple");
 		s.push("Gold");
+		System.out.println();
 		s.printList();
 		System.out.println("\nPopping an item then printing the list again:");
 		s.pop();
-		System.out.println();
+		System.out.println("Printing Stack: ");
 		s.printList();
 		
 		System.out.println();
@@ -23,10 +24,12 @@ public class TestSnQ {
 		q.enqueue("Brown");
 		q.enqueue("Yellow");
 		q.enqueue("Gray");
+		System.out.println("Printing Queue: ");
 		q.printList();
 		System.out.println("\nRemoving an element using dequeue and then printing again:");
 		
 		q.dequeue();
+		System.out.println("Printing Queue now: ");
 		q.printList();
 		
 		System.out.println("\nMoving a Stack to a Queue"
@@ -39,6 +42,16 @@ public class TestSnQ {
 		}
 		System.out.println("Printing the new Queue(Copying first stack): ");
 		q2.printList();
+		System.out.println("\nNow printing the stack again to compare: ");
+		s.printList();
+		System.out.println("Now a new queue will be created and its contents printed: ");
+		Queue qTs = new Queue();
+		qTs.enqueue("Brown");
+		qTs.enqueue("Teal");
+		qTs.enqueue("Burgundy");
+		qTs.enqueue("Tan");
+		System.out.println("\nPrinitng the queue that was just made: ");
+		qTs.printList();
 		
 		
 		
