@@ -54,7 +54,7 @@ public class TestSnQ {
 		qTs.printList();
 		
 		
-		System.out.println("\nNow moving the Queue that was made to a Stack");
+		System.out.println("\nNow moving the Queue to a Stack");
 		Stack s2 = new Stack();
 		String[] tempArray = new String[qTs.getSize()];
 		Link temp2 = qTs.peek();
@@ -67,8 +67,29 @@ public class TestSnQ {
 			s2.push(tempArray[k-1]);
 			k--;
 		}
-		System.out.println("The Strings from the Queue was transfered to the new Stack");
+		System.out.println("The Strings from the Queue was transfered to the new Stack"
+				+ "\nAnd the new Stack will be printed in the same order as the Queue:\n");
 		s2.printList();
+		System.out.println("\nI'll add another string to the Stack we just made"
+				+ "by copying the Queue.  \nThen the Stack will be printed to observe"
+				+ "the order.  \nThen it's contents will be copied to another Stack");
+		s2.push("Black");
+		System.out.println("Stack order: ");
+		s2.printList();
+		System.out.println();
+		String tempArray2[] = new String[s2.getSize()];
+		Stack s3 = new Stack();
+		Link temp3 = s2.peek();
+		for(int i = 0; i < tempArray.length; i++){
+			tempArray2[i] = temp3.color;
+			temp3 = temp3.next;
+		}
+		int j = tempArray.length;
+		while(j != 0){
+			s3.push(tempArray2[j-1]);
+			j--;
+		}
+		
 		
 		
 		

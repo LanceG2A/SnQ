@@ -22,6 +22,7 @@ public class Stack {
 		Link temp = head;
 		System.out.println("Removing: " + temp.color);
 		head = temp.next;
+		size--;
 		
 	}
 	public Link peek(){
