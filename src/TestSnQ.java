@@ -40,7 +40,7 @@ public class TestSnQ {
 			q2.enqueue(temp.color);
 			temp = temp.next;
 		}
-		System.out.println("Printing the new Queue(Copying first stack): ");
+		System.out.println("Printing the new Queue(Copy of first stack): ");
 		q2.printList();
 		System.out.println("\nNow printing the stack again to compare: ");
 		s.printList();
@@ -54,6 +54,21 @@ public class TestSnQ {
 		qTs.printList();
 		
 		
+		System.out.println("\nNow moving the Queue that was made to a Stack");
+		Stack s2 = new Stack();
+		String[] tempArray = new String[qTs.getSize()];
+		Link temp2 = qTs.peek();
+		for(int i = 0; i < tempArray.length; i++){
+			tempArray[i] = temp2.color;
+			temp2 = temp2.next;
+		}
+		int k = tempArray.length;
+		while(k != 0){
+			s2.push(tempArray[k-1]);
+			k--;
+		}
+		System.out.println("The Strings from the Queue was transfered to the new Stack");
+		s2.printList();
 		
 		
 		

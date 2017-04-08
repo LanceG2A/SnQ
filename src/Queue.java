@@ -41,6 +41,7 @@ public class Queue {
 			Link temp = head;
 			System.out.println("dequeue("+temp.color+")");
 			head = temp.next;
+			size--;
 	}
 	}
 	public Link peek(){
