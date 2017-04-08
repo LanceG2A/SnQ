@@ -80,15 +80,19 @@ public class TestSnQ {
 		String tempArray2[] = new String[s2.getSize()];
 		Stack s3 = new Stack();
 		Link temp3 = s2.peek();
-		for(int i = 0; i < tempArray.length; i++){
+		for(int i = 0; i < tempArray2.length; i++){
 			tempArray2[i] = temp3.color;
 			temp3 = temp3.next;
 		}
-		int j = tempArray.length;
+		int j = tempArray2.length;
 		while(j != 0){
 			s3.push(tempArray2[j-1]);
 			j--;
 		}
+		System.out.println("\nThe contents of the Stack we created by copying the Queue"
+				+ "\nWere just pushed to a new Stack.  The order of the new Stack"
+				+ "\nwill be the same as the original Stack.  Printing: ");
+		s3.printList();
 		
 		
 		
